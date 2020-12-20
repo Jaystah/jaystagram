@@ -1,6 +1,14 @@
 import React,{useContext, useCallback} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {UserContext} from '../App'
+import M from 'materialize-css';
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+
 const NavBar = ()=>{
   const {state,dispatch} = useContext(UserContext);
   const history = useHistory();
@@ -26,14 +34,20 @@ const NavBar = ()=>{
     }
   }
     return (
-        <nav>
-        <div className="nav-wrapper white" >
-          <Link to={state?"/":"/signin"} className="brand-logo left">Jaystagram</Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            {renderList()};
+      <>
+      <nav>
+      <div class="nav-wrapper" style={{backgroundColor: "white"}}>
+        <a href="#!" class="brand-logo">Jaystagram</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            {renderList()}
           </ul>
         </div>
       </nav>
+        <ul class="sidenav" id="mobile-demo">
+          {renderList()}
+        </ul>
+        </>
     );
 }
 export default NavBar;
