@@ -18,7 +18,7 @@ const NavBar = ()=>{
       return [
         <li><Link className="navLink" to="/create">Create post</Link></li>,
         <li><Link className="navLink" to="/profile">Profile</Link></li>,
-        <li><Link className="navLink" to="/followingposts">Posts</Link></li>,
+        <li><Link className="navLink" to="/followingposts">Posts of your following</Link></li>,
         <li><button onClick={()=>{
           localStorage.clear();
           dispatch({type: "CLEAR"});
@@ -37,7 +37,7 @@ const NavBar = ()=>{
       <>
       <nav>
       <div class="nav-wrapper" style={{backgroundColor: "white"}}>
-        <a href="#!" class="brand-logo">Jaystagram</a>
+        <Link to="/" class="brand-logo">Jaystagram</Link>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             {renderList()}
@@ -45,6 +45,7 @@ const NavBar = ()=>{
         </div>
       </nav>
         <ul class="sidenav" id="mobile-demo">
+        <li><Link className="navLink" to="/">Home</Link></li>
           {renderList()}
         </ul>
         </>
