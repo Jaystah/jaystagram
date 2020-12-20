@@ -4,7 +4,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcryptjs = require('bcryptjs');
 
-const {JWT_SECRET} = require('../keys');
+const {JWT_SECRET} = require('../config/keys');
 const users = mongoose.model("Users");
 
 const loginRequired = require('../middleware/requireLogin');
