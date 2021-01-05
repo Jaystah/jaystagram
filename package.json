@@ -1,0 +1,29 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaystah/reactIntsta.git"
+  },
+  "author": "Jay Doerga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaystah/reactIntsta/issues"
+  },
+  "homepage": "https://github.com/Jaystah/reactIntsta#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
