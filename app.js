@@ -17,6 +17,7 @@ console.log("Succesfully connected");
 mongoose.connection.on("error",function(err){
    console.log("Error: ", err);
 })
+
 require("./models/users");
 require("./models/post");
 app.use(express.json());
